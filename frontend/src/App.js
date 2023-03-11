@@ -5,13 +5,16 @@ import Administrator from "./pages/Administrator/Administrator";
 import Student from './pages/Student/Student';
 import Teacher from './pages/Teacher/Teacher';
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [userData, setUserData] = useState({});
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} exact />
-        <Route path="/admin" element={<Admin />} exact />
+        <Route path="/" element={<Login userData={userData} setUserData={setUserData} />} exact />
+        <Route path="/admin" element={<Admin userData={userData} setUserData={setUserData} />} exact />
         <Route path="/administrator" element={<Administrator />} exact />
         <Route path="/student" element={<Student />} />
         <Route path="/teacher" element={<Teacher />} />

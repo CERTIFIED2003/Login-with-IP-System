@@ -3,9 +3,11 @@ import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import LoginDesktop from "../../components/Authentication/Desktop/LoginDesktop";
 import LoginMobile from "../../components/Authentication/Mobile/LoginMobile";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-
-const Login = () => {
+const Login = ({ userData, setUserData }) => {
+  const navigate = useNavigate();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const query1770px = useMediaQuery({
@@ -15,7 +17,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [authType, setAuthType] = useState("student");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (click) {
       setAuthType("student");
@@ -31,9 +33,15 @@ const Login = () => {
       alert("Enter your password");
       return;
     }
-    console.log(email, password, authType)
     try {
+      const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`,
+        { email, password, authType }
+      );
+      if (!data) return;
+      setUserData(data);
 
+      if (data.authType === "student") navigate("/student");
+      if (data.authType === "teacher") navigate("/teacher");
     }
     catch (error) {
       console.log(error.message);
