@@ -5,7 +5,7 @@ const AdminMobile = ({ setEmail, setPassword, handleSubmit, Styles, loading }) =
     <div className="myDiv">
       <Styles.MainContainer>
         <Styles.WelcomeText>
-          ADMIN LOGIN
+          ADMINS LOGIN
         </Styles.WelcomeText>
         <Styles.InputContainer>
           <Styles.StyledInput

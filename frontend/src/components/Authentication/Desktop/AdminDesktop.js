@@ -3,7 +3,7 @@ const AdminDesktop = ({ setEmail, setPassword, handleSubmit, click, Styles, load
         <div className="myDiv">
             <Styles.BackgroundBox clicked={click}>
                 <Styles.Form className="signup" onSubmit={handleSubmit}>
-                    <Styles.Title>Admin Login</Styles.Title>
+                    <Styles.Title>Admins Login</Styles.Title>
                     <Styles.Input
                         type="email"
                         placeholder="Email"
