@@ -250,7 +250,7 @@ export const MainContainer = styled.div`
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
-  @media only screen and (max-width: 320px) {
+  @media only screen and (max-width: 360px) {
     width: 80vw;
     height: 50vh;
     hr {
@@ -301,6 +301,12 @@ export const InputContainer = styled.div`
   align-items: center;
   height: 30%;
   width: 100%;
+  @media only screen and (max-width: 360px) {
+    height: 40%;
+  }
+  @media only screen and (min-width: 360px) {
+    height: 40%;
+  }
 `;
 
 export const ButtonContainer = styled.div`

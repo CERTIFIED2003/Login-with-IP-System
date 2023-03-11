@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const LoginMobile = ({ setEmail, setPassword, authType, setAuthType, handleSubmit, Styles }) => {
   return (
     <div className="myDiv">
@@ -38,7 +40,10 @@ const LoginMobile = ({ setEmail, setPassword, authType, setAuthType, handleSubmi
             SIGN IN
           </Styles.StyledButton>
         </Styles.ButtonContainer>
-        {/* <Styles.HorizontalRule /> */}
+        <Styles.HorizontalRule />
+        <Link to="/admin" style={{ textDecoration: "none", color: "inherit" }}>
+          <Styles.ForgotPassword>Admin?</Styles.ForgotPassword>
+        </Link>
       </Styles.MainContainer>
     </div>
   )

@@ -223,7 +223,7 @@ border-radius: 10px;
 color: #ffffff;
 text-transform: uppercase;
 letter-spacing: 0.4rem;
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 360px) {
   width: 80vw;
   height: 50vh;
   hr {
@@ -270,6 +270,12 @@ justify-content: space-around;
 align-items: center;
 height: 25%;
 width: 100%;
+@media only screen and (max-width: 360px) {
+  height: 27%;
+}
+@media only screen and (min-width: 360px) {
+  height: 30%;
+}
 `;
 
 export const ButtonContainer = styled.div`
