@@ -1,4 +1,4 @@
-const AdminDesktop = ({ setEmail, setPassword, handleSubmit, click, Styles }) => {
+const AdminDesktop = ({ setEmail, setPassword, handleSubmit, click, Styles, loading }) => {
     return (
         <Styles.BackgroundBox clicked={click}>
             <Styles.Form className="signup" onSubmit={handleSubmit}>
@@ -16,7 +16,12 @@ const AdminDesktop = ({ setEmail, setPassword, handleSubmit, click, Styles }) =>
                 <Styles.Link href="/">
                     Not an Admin?
                 </Styles.Link>
-                <Styles.Button type="submit">Sign In</Styles.Button>
+                <Styles.Button disabled={loading} type="submit">
+                    {loading
+                        ? <div className="loading-spinner" />
+                        : "Sign In"
+                    }
+                </Styles.Button>
             </Styles.Form>
 
             <Styles.Text className="text2">

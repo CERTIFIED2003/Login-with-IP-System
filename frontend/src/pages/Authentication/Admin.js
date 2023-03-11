@@ -6,7 +6,7 @@ import { useState } from 'react';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
-const Admin = ({ userData, setUserData }) => {
+const Admin = ({ loading, setLoading, setUserData }) => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -25,6 +25,7 @@ const Admin = ({ userData, setUserData }) => {
             return;
         }
         try {
+            setLoading(true);
             const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`,
                 { email, password, authType: "admin" }
             );
@@ -34,6 +35,9 @@ const Admin = ({ userData, setUserData }) => {
         }
         catch (error) {
             console.log(error.message);
+        }
+        finally {
+            setLoading(false);
         }
     }
 
@@ -45,12 +49,14 @@ const Admin = ({ userData, setUserData }) => {
                     setEmail={setEmail}
                     setPassword={setPassword}
                     handleSubmit={handleSubmit}
+                    loading={loading}
                     Styles={Styles}
                 />
                 : <AdminDesktop
                     setEmail={setEmail}
                     setPassword={setPassword}
                     handleSubmit={handleSubmit}
+                    loading={loading}
                     click
                     Styles={Styles}
                 />

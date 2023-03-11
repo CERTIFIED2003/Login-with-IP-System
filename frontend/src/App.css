@@ -35,3 +35,21 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.loading-spinner{
+    width:20px;
+    height:20px;
+    border:2px solid white;
+    border-radius:50%;
+    border-top-color:#0001;
+    display:inline-block;
+    animation:loadingspinner .7s linear infinite;
+}
+@keyframes loadingspinner{
+    0%{
+      transform:rotate(0deg)
+    }
+    100%{
+      transform:rotate(360deg)
+    }
+}

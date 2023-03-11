@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const AdminMobile = ({ setEmail, setPassword, handleSubmit, Styles }) => {
+const AdminMobile = ({ setEmail, setPassword, handleSubmit, Styles, loading }) => {
   return (
     <div className="myDiv">
       <Styles.MainContainer>
@@ -20,8 +20,11 @@ const AdminMobile = ({ setEmail, setPassword, handleSubmit, Styles }) => {
           />
         </Styles.InputContainer>
         <Styles.ButtonContainer>
-          <Styles.StyledButton onClick={handleSubmit}>
-            Sign In
+          <Styles.StyledButton disabled={loading} onClick={handleSubmit}>
+            {loading
+              ? <div className="loading-spinner" />
+              : "SIGN IN"
+            }
           </Styles.StyledButton>
         </Styles.ButtonContainer>
         <Styles.HorizontalRule />

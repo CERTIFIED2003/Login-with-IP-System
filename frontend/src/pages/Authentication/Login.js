@@ -6,7 +6,7 @@ import LoginMobile from "../../components/Authentication/Mobile/LoginMobile";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ userData, setUserData }) => {
+const Login = ({ loading, setLoading, setUserData }) => {
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -19,12 +19,6 @@ const Login = ({ userData, setUserData }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (click) {
-      setAuthType("student");
-    }
-    else {
-      setAuthType("teacher")
-    }
     if (email.length < 1) {
       alert("Enter your email address");
       return;
@@ -34,6 +28,7 @@ const Login = ({ userData, setUserData }) => {
       return;
     }
     try {
+      setLoading(true);
       const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`,
         { email, password, authType }
       );
@@ -45,6 +40,9 @@ const Login = ({ userData, setUserData }) => {
     }
     catch (error) {
       console.log(error.message);
+    }
+    finally {
+      setLoading(false);
     }
   }
 
@@ -58,12 +56,15 @@ const Login = ({ userData, setUserData }) => {
           authType={authType}
           setAuthType={setAuthType}
           handleSubmit={handleSubmit}
+          loading={loading}
           Styles={Styles}
         />
         : <LoginDesktop
           setEmail={setEmail}
           setPassword={setPassword}
+          setAuthType={setAuthType}
           handleSubmit={handleSubmit}
+          loading={loading}
           click={click}
           handleClick={handleClick}
           Styles={Styles}

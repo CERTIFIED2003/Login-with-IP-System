@@ -1,4 +1,4 @@
-const LoginDesktop = ({ setEmail, setPassword, handleSubmit, click, handleClick, Styles }) => {
+const LoginDesktop = ({ loading, setEmail, setPassword, setAuthType, handleSubmit, click, handleClick, Styles }) => {
 
     return (
         <body className="myBody">
@@ -18,7 +18,12 @@ const LoginDesktop = ({ setEmail, setPassword, handleSubmit, click, handleClick,
                         placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <Styles.Button type="submit">Sign In</Styles.Button>
+                    <Styles.Button disabled={loading} onClick={() => setAuthType("student")} type="submit">
+                        {loading
+                            ? <div className="loading-spinner" />
+                            : "Sign In"
+                        }
+                    </Styles.Button>
                 </Styles.Form>
 
                 {/* ---------------------- TEACHER ---------------------- */}
@@ -37,7 +42,12 @@ const LoginDesktop = ({ setEmail, setPassword, handleSubmit, click, handleClick,
                     <Styles.Link href="/admin">
                         Not a Teacher?
                     </Styles.Link>
-                    <Styles.Button>Sign In</Styles.Button>
+                    <Styles.Button disabled={loading} onClick={() => setAuthType("teacher")} type="submit">
+                        {loading
+                            ? <div className="loading-spinner" />
+                            : "Sign In"
+                        }
+                    </Styles.Button>
                 </Styles.Form>
 
 
