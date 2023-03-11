@@ -1,0 +1,47 @@
+const LoginMobile = ({ setEmail, setPassword, authType, setAuthType, handleSubmit, Styles }) => {
+  return (
+    <div className="myDiv">
+      <Styles.MainContainer>
+        <Styles.WelcomeText>Welcome</Styles.WelcomeText>
+        <Styles.InputContainer>
+          <Styles.StyledInput
+            type="email"
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Styles.StyledInput
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Styles.OptionsText>SIGN IN AS:</Styles.OptionsText>
+          <Styles.CheckBoxContainer>
+            <Styles.Space>
+              <Styles.OptionsText>STUDENT</Styles.OptionsText>
+              <input type='checkbox'
+                checked={authType === "student"}
+                onChange={() => setAuthType("student")}
+              />
+            </Styles.Space>
+
+            <Styles.Space>
+              <Styles.OptionsText>TEACHER</Styles.OptionsText>
+              <input type='checkbox'
+                checked={authType === "teacher"}
+                onChange={() => setAuthType("teacher")}
+              />
+            </Styles.Space>
+          </Styles.CheckBoxContainer>
+        </Styles.InputContainer>
+        <Styles.ButtonContainer>
+          <Styles.StyledButton type="submit" onClick={handleSubmit}>
+            SIGN IN
+          </Styles.StyledButton>
+        </Styles.ButtonContainer>
+        {/* <Styles.HorizontalRule /> */}
+      </Styles.MainContainer>
+    </div>
+  )
+}
+
+export default LoginMobile
