@@ -1,7 +1,7 @@
 const LoginDesktop = ({ loading, setEmail, setPassword, setAuthType, handleSubmit, click, handleClick, Styles }) => {
 
     return (
-        <body className="myBody">
+        <div className="myDiv">
             <Styles.BackgroundBox clicked={click}>
                 <Styles.ButtonAnimate clicked={click} onClick={handleClick}></Styles.ButtonAnimate>
 
@@ -73,7 +73,7 @@ const LoginDesktop = ({ loading, setEmail, setPassword, setAuthType, handleSubmi
                 <Styles.Box1 clicked={click} />
                 <Styles.Box2 clicked={click} />
             </Styles.BackgroundBox>
-        </body>
+        </div>
     )
 }
 
