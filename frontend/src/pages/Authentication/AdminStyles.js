@@ -220,7 +220,7 @@ box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 backdrop-filter: blur(8.5px);
 -webkit-backdrop-filter: blur(8.5px);
 border-radius: 10px;
-color: #ffffff;
+// color: #ffffff;
 text-transform: uppercase;
 letter-spacing: 0.4rem;
 @media only screen and (max-width: 360px) {
@@ -322,7 +322,7 @@ height: 5rem;
 padding: 1rem;
 border: none;
 outline: none;
-color: #fff;
+// color: #fff;
 font-size: 1.5rem;
 font-weight: bold;
 &:focus {
@@ -332,7 +332,8 @@ font-weight: bold;
   border-radius: 2rem;
 }
 &::placeholder {
-  color: #b9abe099;
+  // color: #b9abe099;
+  color: #111;
   font-weight: 100;
   font-size: 1.5rem;
 }
