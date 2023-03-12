@@ -30,7 +30,11 @@ const Login = ({ loading, setLoading, setUserData }) => {
     try {
       setLoading(true);
       const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`,
-        { email, password, authType }
+        { 
+          email, 
+          password, 
+          authType,
+        }
       );
 
       if (!data) return;

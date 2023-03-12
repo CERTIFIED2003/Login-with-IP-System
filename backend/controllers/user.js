@@ -7,10 +7,10 @@ exports.login = async (req, res) => {
     try {
         const { email, password, authType } = req.body;
         let user;
+        const IP = await axios.get("https://api.ipify.org");
         if (authType === "student") {
             user = await Student.findOne({ email });
-            const IP = await axios.get("https://api.ipify.org");
-            if (IP.data !== process.env.NETWORK_IP) {
+            if (IP.data != process.env.NETWORK_IP) {
                 return res.status(400).json({
                     message: `Connect to your Institutions's Network (${process.env.NETWORK_IP}) to Login!`
                 });
