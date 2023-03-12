@@ -35,7 +35,8 @@ const Admin = ({ loading, setLoading, setUserData }) => {
             if (data.authType === "admin") navigate("/administrator");
         }
         catch (error) {
-            console.log(error.message);
+            console.log(error.response.data.message);
+            alert(error.response.data.message);
         }
         finally {
             setLoading(false);
