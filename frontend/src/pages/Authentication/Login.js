@@ -32,19 +32,11 @@ const Login = ({ loading, setLoading, setUserData }) => {
       const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`,
         { email, password, authType }
       );
+
       if (!data) return;
       setUserData(data);
 
-      if (data.authType === "student") {
-        const IP = await axios.get("https://api.ipify.org");
-        console.log(IP);
-
-        if (IP.data !== process.env.REACT_APP_NETWORK_IP) {
-          alert(`Connect to your Institutions's Network (${process.env.REACT_APP_NETWORK_IP}) to Login!`);
-          return;
-        }
-        navigate("/student");
-      }
+      if (data.authType === "student") navigate("/student");
       if (data.authType === "teacher") navigate("/teacher");
     }
     catch (error) {
