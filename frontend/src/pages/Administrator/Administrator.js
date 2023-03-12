@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import "./styles.css";
+import { useNavigate } from "react-router-dom";
 
 const Administrator = ({ handleLogout }) => {
   const navigate = useNavigate();
