@@ -38,7 +38,7 @@ const LoginMobile = ({ setEmail, setPassword, authType, setAuthType, handleSubmi
         <Styles.ButtonContainer>
           <Styles.StyledButton disabled={loading} type="submit" onClick={handleSubmit}>
             {loading
-              ? <div className="loading-spinner" />
+              ? <div className="flex_center"><div className="loading-spinner" /></div>
               : "SIGN IN"
             }
           </Styles.StyledButton>

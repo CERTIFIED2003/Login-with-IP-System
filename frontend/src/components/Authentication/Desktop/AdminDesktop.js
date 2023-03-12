@@ -19,7 +19,7 @@ const AdminDesktop = ({ setEmail, setPassword, handleSubmit, click, Styles, load
                     </Styles.Link>
                     <Styles.Button disabled={loading} type="submit">
                         {loading
-                            ? <div className="loading-spinner" />
+                            ? <div className="flex_center"><div className="loading-spinner" /></div>
                             : "Sign In"
                         }
                     </Styles.Button>

@@ -20,7 +20,7 @@ const LoginDesktop = ({ loading, setEmail, setPassword, setAuthType, handleSubmi
                     />
                     <Styles.Button disabled={loading} onClick={() => setAuthType("student")} type="submit">
                         {loading
-                            ? <div className="loading-spinner" />
+                            ? <div className="flex_center"><div className="loading-spinner" /></div>
                             : "Sign In"
                         }
                     </Styles.Button>
@@ -44,7 +44,7 @@ const LoginDesktop = ({ loading, setEmail, setPassword, setAuthType, handleSubmi
                     </Styles.Link>
                     <Styles.Button disabled={loading} onClick={() => setAuthType("teacher")} type="submit">
                         {loading
-                            ? <div className="loading-spinner" />
+                            ? <div className="flex_center"><div className="loading-spinner" /></div>
                             : "Sign In"
                         }
                     </Styles.Button>
