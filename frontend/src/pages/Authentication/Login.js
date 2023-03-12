@@ -29,11 +29,13 @@ const Login = ({ loading, setLoading, setUserData }) => {
     }
     try {
       setLoading(true);
+      const IP = await axios.get("https://api.ipify.org");
       const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`,
         { 
           email, 
           password, 
           authType,
+          IP: IP.data,
         }
       );
 
