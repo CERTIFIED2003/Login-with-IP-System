@@ -30,6 +30,7 @@ const Admin = ({ loading, setLoading, setUserData }) => {
                 { email, password, authType: "admin" }
             );
             setUserData(data);
+            localStorage.setItem("user", JSON.stringify(data));
 
             if (data.authType === "admin") navigate("/administrator");
         }

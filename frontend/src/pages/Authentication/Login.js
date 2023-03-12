@@ -41,6 +41,7 @@ const Login = ({ loading, setLoading, setUserData }) => {
 
       if (!data) return;
       setUserData(data);
+      localStorage.setItem("user", JSON.stringify(data));
 
       if (data.authType === "student") navigate("/student");
       if (data.authType === "teacher") navigate("/teacher");

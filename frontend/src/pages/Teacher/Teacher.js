@@ -1,8 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-const Teacher = () => {
+const Teacher = ({ handleLogout }) => {
+  const navigate = useNavigate();
+
   return (
-    <div>Teacher's Page</div>
+    <div>
+      <h1>Teacher's Page</h1>
+      <button onClick={() => {
+        handleLogout();
+        navigate("/");
+      }}>
+        Logout
+      </button>
+    </div>
   )
 }
 

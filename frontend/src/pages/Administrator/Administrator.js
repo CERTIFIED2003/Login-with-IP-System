@@ -1,8 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-const Administrator = () => {
+const Administrator = ({ handleLogout }) => {
+  const navigate = useNavigate();
+
   return (
-    <div>Admin's Page</div>
+    <div>
+      <h1>Admin's Page</h1>
+      <button onClick={() => {
+        handleLogout();
+        navigate("/");
+      }}>
+        Logout
+      </button>
+    </div>
   )
 }
 
