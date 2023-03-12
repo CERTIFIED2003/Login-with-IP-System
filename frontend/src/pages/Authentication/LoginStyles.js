@@ -103,7 +103,8 @@ export const Box1 = styled.div`
 
 export const Box2 = styled.div`
   background-color: #053271;
-  width: 45%;
+  width: 45.4%;
+  // width: 45%;
   height: 100%;
   position: absolute;
   right: 0;
@@ -111,7 +112,8 @@ export const Box2 = styled.div`
 
   z-index: 600;
   transform: ${(props) =>
-    props.clicked ? "translateX(-122%)" : "translateX(0%)"};
+    props.clicked ? "translateX(-120.3%)" : "translateX(0%)"};
+    // props.clicked ? "translateX(-122%)" : "translateX(0%)"};
   transition: transform 1s;
 
   border-radius: ${(props) =>
