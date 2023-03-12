@@ -5,11 +5,19 @@ import Administrator from "./pages/Administrator/Administrator";
 import Student from './pages/Student/Student';
 import Teacher from './pages/Teacher/Teacher';
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const onLoad = async () => {
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}`);
+    }
+    onLoad();
+  }, []);
 
   console.log(userData);
 
