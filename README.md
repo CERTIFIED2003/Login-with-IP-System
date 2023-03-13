@@ -2,7 +2,7 @@
 
 <a href="https://www.buymeacoffee.com/lalshubham" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 140px !important;" ></a>
 
-### In development mode. Check back soon!
+### Currently in development mode. Check back soon!
 
 ### Some Snapshots of the application
 ![Screenshot (312)](https://user-images.githubusercontent.com/111045472/224488107-af646310-ac05-4b61-8add-8363514ce72d.png)
