@@ -112,16 +112,16 @@
 }
 */
 
-a {
+.homepage{
   color: #fff;
   text-decoration: none;
 }
 
-a::before {
+.homepage::before{
   content: "[";
 }
 
-a::after {
+.homepage::after{
   content: "]";
 }
 
