@@ -20,7 +20,7 @@ Email- c@d.com
 Password- 3
 ```
 
-### Currently in development mode. Check back soon!
+
 
 ### Some Snapshots of the application
 ![Screenshot (312)](https://user-images.githubusercontent.com/111045472/224488107-af646310-ac05-4b61-8add-8363514ce72d.png)
